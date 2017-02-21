@@ -1,0 +1,14 @@
+{
+  "name": "react-generator",
+  "version": "1.0.0",
+  "description": "Templates generator for react and redux",
+  "main": "dist/index.js",
+  "author": "Bernabe Gonzalez",
+  "license": "MIT",
+  "scripts": {
+    "start": "plop"
+  },
+  "dependencies": {
+    "plop": "^1.7.4"
+  }
+}
