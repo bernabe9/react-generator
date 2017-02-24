@@ -1,6 +1,6 @@
 {
-  "name": "react-generator",
-  "version": "1.0.0",
+  "name": "react-generator-templates",
+  "version": "1.0.1",
   "description": "Templates generator for react and redux",
   "main": "dist/index.js",
   "author": "Bernabe Gonzalez",
