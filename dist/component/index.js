@@ -8,24 +8,40 @@ module.exports = {
     type: 'list',
     name: 'type',
     message: 'Select the type of component',
-    default: 'Stateless Function',
-    choices: () => ['Stateless Function'],
-  }, {
+    default: 'Stateless',
+    choices: () => ['Stateless', 'Component'],
+  },
+  {
     type: 'input',
     name: 'name',
     message: 'What should it be called?',
-    default: 'Button',
     validate: (value) => {
-      return Boolean(value) ? true : 'The name is required';
-    },
+      if ((/.+/).test(value)) { return true; }
+      return 'name is required';
+    }
+  },
+  {
+    type: 'confirm',
+    name: 'connectedComponent',
+    default: true,
+    message: 'Do you want a connected component?'
+  },
+  {
+    type: 'input',
+    name: 'relativePath',
+    message: 'Folder'
   }],
   actions: (data) => {
     // Generate index.js and index.test.js
     let componentTemplate;
 
     switch (data.type) {
-      case 'Stateless Function': {
+      case 'Stateless': {
         componentTemplate = path.resolve(__dirname, 'stateless.js.hbs');
+        break;
+      }
+      case 'Component': {
+        componentTemplate = path.resolve(__dirname, 'component.js.hbs');
         break;
       }
       default: {
@@ -33,9 +49,17 @@ module.exports = {
       }
     }
 
+    let relativePath;
+
+    if (data.relativePath) {
+      relativePath = 'app/components/' + data.relativePath + '/{{properCase name}}.js'
+    } else {
+      relativePath = 'app/components/{{properCase name}}.js'
+    }
+
     const actions = [{
       type: 'add',
-      path: path.resolve(process.cwd(), 'app/components/{{properCase name}}.js'),
+      path: path.resolve(process.cwd(), relativePath),
       templateFile: componentTemplate,
       abortOnFail: true,
     }];

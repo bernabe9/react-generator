@@ -4,11 +4,19 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 {{/if}}
 
-const {{ properCase name }} = () => {
-  return (
-    <div>
-    </div>
-  );
+class {{ properCase name }} extends Component {
+  constructor() {
+    super();
+
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div>
+      </div>
+    );
+  }
 }
 
 {{ properCase name }}.propTypes = {
