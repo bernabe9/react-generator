@@ -3,7 +3,7 @@
 const path = require('path');
 
 module.exports = {
-  description: 'Add action and reducer',
+  description: 'Add action',
   prompts: [
   {
     type: 'input',
@@ -32,7 +32,7 @@ module.exports = {
     });
 
     if (data.wantReducer) {
-      const reducerTemplate = path.resolve(__dirname, 'reducer.js.hbs');
+      const reducerTemplate = path.resolve(__dirname, '../reducer/reducer.js.hbs');
 
       actions.push({
         type: 'add',
