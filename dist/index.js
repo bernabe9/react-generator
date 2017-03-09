@@ -5,7 +5,7 @@ const reducerGenerator = require('./reducer/index.js');
 
 module.exports = (plop) => {
   plop.setGenerator('component', componentGenerator);
-  plop.setGenerator('container', componentGenerator);
+  plop.setGenerator('container', containerGenerator);
   plop.setGenerator('action', actionGenerator);
   plop.setGenerator('reducer', reducerGenerator);
 };

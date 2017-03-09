@@ -26,7 +26,7 @@ module.exports = {
 
     actions.push({
       type: 'add',
-      path: path.resolve(process.cwd(), 'app/actions/{{camelCase name}}Actions.js'),
+      path: path.resolve(process.cwd(), 'src/actions/{{camelCase name}}Actions.js'),
       templateFile: actionTemplate,
       abortOnFail: true,
     });
@@ -36,7 +36,7 @@ module.exports = {
 
       actions.push({
         type: 'add',
-        path: path.resolve(process.cwd(), 'app/reducers/{{camelCase name}}Reducer.js'),
+        path: path.resolve(process.cwd(), 'src/reducers/{{camelCase name}}Reducer.js'),
         templateFile: reducerTemplate,
         abortOnFail: true,
       });

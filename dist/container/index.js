@@ -3,12 +3,12 @@
 const path = require('path');
 
 module.exports = {
-  description: 'Add component',
+  description: 'Add container',
   prompts: [{
     type: 'list',
     name: 'type',
     message: 'Select the type of container',
-    default: 'Stateless',
+    default: 'Component',
     choices: () => ['Component', 'Stateless'],
   },
   {
@@ -52,9 +52,9 @@ module.exports = {
     let relativePath;
 
     if (data.relativePath) {
-      relativePath = 'app/container/' + data.relativePath + '/{{properCase name}}.js'
+      relativePath = 'src/container/' + data.relativePath + '/{{properCase name}}.js'
     } else {
-      relativePath = 'app/container/{{properCase name}}.js'
+      relativePath = 'src/container/{{properCase name}}.js'
     }
 
     const actions = [{
