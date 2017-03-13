@@ -19,14 +19,14 @@ class {{ properCase name }} extends Component {
   }
 }
 
-{{ properCase name }}.propTypes = {
-};
-
 {{#if connectedComponent}}
 const { object } = PropTypes;
 
-const mapState = (state) => ({
+{{ properCase name }}.propTypes = {
   actions: object.isRequired
+};
+
+const mapState = (state) => ({
 });
 
 const mapDispatch = (dispatch) => ({
@@ -35,5 +35,8 @@ const mapDispatch = (dispatch) => ({
 
 export default connect(mapState, mapDispatch)({{ properCase name }});
 {{else}}
+{{ properCase name }}.propTypes = {
+};
+
 export default {{ properCase name }};
 {{/if}}
