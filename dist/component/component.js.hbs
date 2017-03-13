@@ -23,7 +23,10 @@ class {{ properCase name }} extends Component {
 };
 
 {{#if connectedComponent}}
+const { object } = PropTypes;
+
 const mapState = (state) => ({
+  actions: object.isRequired
 });
 
 const mapDispatch = (dispatch) => ({
