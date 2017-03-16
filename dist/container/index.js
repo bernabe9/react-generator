@@ -52,9 +52,9 @@ module.exports = {
     let relativePath;
 
     if (data.relativePath) {
-      relativePath = 'src/container/' + data.relativePath + '/{{properCase name}}.js'
+      relativePath = 'src/containers/' + data.relativePath + '/{{properCase name}}.js'
     } else {
-      relativePath = 'src/container/{{properCase name}}.js'
+      relativePath = 'src/containers/{{properCase name}}.js'
     }
 
     const actions = [{
